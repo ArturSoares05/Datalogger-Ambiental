@@ -76,4 +76,10 @@ O sistema entra em estado de alerta quando:
 ## 📌 Observações
 
 - Compatível com Arduino Uno e projetos standalone com ATmega328P  
-- Ideal para monitoramento ambiental, estufas e projetos acadêmicos  
+- Ideal para monitoramento ambiental, estufas e projetos acadêmicos
+
+---
+
+## 📌 Integrantes do Grupo
+- Arthur de Paula Rosendo, Artur Soares, Gabriel Kenji Iwasaki e Vitor Ferreira de Freitas
+
