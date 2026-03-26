@@ -47,6 +47,10 @@ O dispositivo monitora **temperatura, umidade e luminosidade em tempo real**, fo
 
 ---
 
+## Circuito
+
+<img width="956" height="501" alt="image" src="https://github.com/user-attachments/assets/b858b450-e78c-4842-a5e0-44c573202088" />
+
 ## 📐 Pinagem do Projeto
 
 | Componente     | Pino Arduino | Observação                    |
