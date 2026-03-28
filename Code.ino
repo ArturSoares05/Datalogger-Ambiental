@@ -18,15 +18,14 @@ LiquidCrystal_I2C lcd(0x27, 16, 2);
 RTC_DS1307 rtc;
 DHT dht(DHTPIN, DHTTYPE);
 
-// --- Variáveis de Controlo ---
+// --- Variáveis de Controle ---
 bool ligado = false;
 int menuOpcao = 0;     
 bool emMedicao = false;
 unsigned long tempoBotoesPressionados = 0;
 unsigned long ultimoBipe = 0;
-unsigned long tempoBloqueioReligamento = 0; // Nova variável para a trava
+unsigned long tempoBloqueioReligamento = 0; 
 
-// Variáveis para a lógica de "Soltar o Botão"
 bool b1Anterior = false;
 bool b2Anterior = false;
 bool cancelaComando = false;
@@ -64,11 +63,11 @@ void desligarDispositivo() {
   lcd.clear();
   lcd.setCursor(0, 0);
   lcd.print("Desligando...");
-  delay(1500); // Dá tempo ao usuário de ler a mensagem
+  delay(1500); 
   
-  lcd.clear();       // LIMPA TUDO ANTES DE APAGAR
-  lcd.noBacklight(); // Desliga o LED de fundo
-  lcd.off();         // Desliga o controlador (deixa a tela "morta")
+  lcd.clear();       
+  lcd.noBacklight(); 
+  lcd.off();    
   
   digitalWrite(LED_V, LOW);
   digitalWrite(LED_R, LOW);
@@ -79,7 +78,7 @@ void desligarDispositivo() {
 }
 
 void loop() {
-  // Leitura Pull-Down: HIGH = Pressionado
+
   bool b1Atual = (digitalRead(BTN_1) == HIGH); 
   bool b2Atual = (digitalRead(BTN_2) == HIGH);
 
@@ -97,7 +96,7 @@ void loop() {
 
   // 2. Ligar Dispositivo (Com trava de 5 segundos)
   if (!ligado) {
-    // Só permite ligar se soltar o botão E se já passaram 5 segundos do desligamento
+    
     if (b1Anterior && !b1Atual) { 
       if (millis() - tempoBloqueioReligamento > 5000) {
         animacaoLigando();
